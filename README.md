@@ -9,6 +9,7 @@ This project lets you add contacts, delete individual contacts, and clear the co
 - Add a contact
 - Delete a contact
 - Clear all contacts
+- Search functionality
 - Contact name and phone number validation
 - Phone number limited to 10 digits
 - Simple and responsive UI
