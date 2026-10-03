@@ -2,12 +2,21 @@ import React, { useState } from "react";
 import ContactList from "./ContactList";
 
 export default function Contacts() {
+  const [search, setSearch] = useState("");
   const [contactList, setContactList] = useState([]);
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   return (
     <div className="container">
-        <h1>Contact Manager</h1>
+      <h1>Contact Manager</h1>
+      <input
+        type="text"
+        placeholder="Search 🔍"
+        value={search}
+        onChange={(e) => {
+          setSearch(e.target.value);
+        }}
+      />
       <input
         type="text"
         placeholder="Write a contact name"
@@ -41,9 +50,13 @@ export default function Contacts() {
           setContact("");
         }}
       >
-        Add Conatct
+        Add Contact
       </button>
-      <ContactList Contacts={contactList} setContactList={setContactList} />
+      <ContactList
+        contactList={contactList}
+        setContactList={setContactList}
+        search={search}
+      />
     </div>
   );
 }
